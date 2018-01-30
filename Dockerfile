@@ -8,5 +8,8 @@ RUN chmod +x /usr/local/bin/embulk
 ENV PATH /usr/local/bin/embulk:$PATH
 
 RUN apt-get update -y && \
-    apt-get install -y git
+    apt-get install -y git python-dev && \
+    wget https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
+    pip install awscli
 
